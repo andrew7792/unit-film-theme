@@ -1,5 +1,8 @@
 let mix = require('laravel-mix');
 
+const fromPath = './public/wp-content/themes/football/app';
+const toPath = './public/wp-content/themes/football';
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,10 +14,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('./materials/scrips/app.js', './public/wp-content/themes/LearnTheme/scripts/app.js')
-   .sass('./materials/sass/style.scss', './public/wp-content/themes/LearnTheme/css/style.css');
+mix.js(fromPath + '/js/app.js', toPath + '/script/script.js')
+   .sass(fromPath + '/sass/style.scss', toPath + '/css/style.css');
 
-mix.copy('./materials/LearnTheme/*.php','./public/wp-content/themes/LearnTheme/');
+// mix.copy('./materials/LearnTheme/*.php','./public/wp-content/themes/LearnTheme/');
 
 // Full API
 // mix.js(src, output);
